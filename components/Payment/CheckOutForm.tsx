@@ -32,7 +32,7 @@ const CheckOutForm = () => {
 
     const secretKey = await res.json();
     console.log(secretKey);
-    const {} = await stripe.confirmPayment({
+    const {error} = await stripe.confirmPayment({
       clientSecret: secretKey,
       elements,
       confirmParams: {
